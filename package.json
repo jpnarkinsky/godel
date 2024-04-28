@@ -1,0 +1,22 @@
+{
+	"name": "godel",
+	"displayName": "Game Object DEscription Language",
+	"devDependencies": {
+		"@babel/core": "^7.24.4",
+		"@babel/preset-env": "^7.24.4",
+		"@babel/preset-typescript": "^7.24.1",
+		"@jest/globals": "^29.7.0",
+		"babel-cli": "^6.26.0",
+		"babel-jest": "^29.7.0",
+		"ts-jest": "^29.1.2",
+		"typescript": "^5.4.5"
+	},
+	"scripts": {
+		"build": "tsc",
+		"test": "ts-jest"
+	},
+	"version": "0.1",
+	"dependencies": {
+		"jest": "^29.7.0"
+	}
+}
