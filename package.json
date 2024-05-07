@@ -17,7 +17,7 @@
 	"scripts": {
 		"build": "tsc",
 		"clean": "rm -r dist/*",
-		"generate:parser": "node dist/lib/parser/generate-parser-types",
+		"generate:parser": "esrun lib/parser/generate-parser-types.ts",
 		"pretest": "pnpm build",
 		"test": "jest"
 	},
@@ -26,7 +26,6 @@
 		"@types/node": "^20.12.10",
 		"chevrotain": "^11.0.3",
 		"jest": "^29.7.0",
-		"purescript": "^0.15.15",
 		"zod": "^3.23.4"
 	},
 	"type": "module"
