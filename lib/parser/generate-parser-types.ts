@@ -5,7 +5,7 @@
 
 import { writeFileSync } from "fs";
 import { generateCstDts } from "chevrotain";
-import { productions } from "./parser.ts";
+import { productions } from "./parser";
 
 const dtsString = generateCstDts(productions);
 writeFileSync("lib/parser/parser.d.ts", dtsString);

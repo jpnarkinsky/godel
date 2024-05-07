@@ -1,11 +1,18 @@
 {
     "compilerOptions": {
-        "module": "nodenext",
-        "target": "ES2022",
         "declaration": true,
+        "esModuleInterop": true,
+        "module": "nodenext",
         "outDir": "./dist",
+        "target": "ES2022",
+        "types": [
+            "vitest/globals"
+        ]
     },
     "include": [
         "lib/**/*.ts",
+    ],
+    "exclude": [
+        "lib/**/generate*.ts",
     ]
 }
