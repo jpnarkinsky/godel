@@ -1,0 +1,71 @@
+Type Ability {
+  value: int                       # This is the default value that will be returned in a fhirpath that terminates here.
+  Modifier =floor(value - 10 / 2)  # This is a calculated value.
+  
+  validate value is set
+  validate value <= 20             # Value must always be less than 20.  The expression after validate 
+  validate value >= 3
+}
+
+Type Modifier {
+  value: int
+
+  validate value is set
+  validate value >= -5
+  validate value <= +5
+}
+
+Type Color {
+  value: string
+
+  # The following regular expression basically means that the value must be one of the
+  # listed colors OR an RGB color code (something like #0000FF for solid blue)
+  validate value matches /^(#[a-f0-9]{6}|brown|white|black|red|blue|orange|yellow|green/
+}
+
+Type Character {
+  name: string                # The character's name.  Required.
+  species: reference(Species) # A reference to a Species
+  strength: Ability           # The character's strength.
+  dexterity: Ability          # DEX
+  wisdom: Ability
+  charisma: Ability
+  intelligence: Ability
+
+  validate id is set
+  validate name is set
+  validate species is set
+  validate strength is set
+  validate dexterity is set
+  validate wisdom is set
+  validate charisma is set
+  validate intelligence is set
+}
+
+ResourceType Species {
+  skinColor: string
+  hairColor: string
+  eyeColor: string = black
+  hairColor: string
+  eyeColor: string
+  height: length
+  weight: weight
+}
+
+Species Ewok {
+  hairColor: color
+  eyeColor = black
+  skinColor = brown
+
+  # The difference between ~ and "=" is that = is calculated at runtime,
+  # ~ is instructions for how to calculate it when making a new 
+  # character or some other lifecycle event.  We should really have
+  # actual height & weight types.  
+  height ~ 45 + roll(6) + roll(6)
+  weight ~ 40 + roll(4) + roll(4)
+}
+
+Character Lookie {
+  name: Lookie Ewookie
+  species: Ewok
+}

@@ -1,0 +1,56 @@
+resourceType: Class
+id: Sentinel
+summary: |
+  The sentinel uses stealth and subterfuge to accomplish the will of the Force. 
+  Where the consular focuses on mastery of the Force and the guardian focuses 
+  on the mastery of the lightsaber, the sentinel focuses on merging the two.
+description: |
+  Clad in black robes, the rattataki pulls his hood forward and steps into the 
+  shadowy alcove, only to reappear further down the hall. As his quarry walks 
+  past, he presses the hilt of his lightsaber to the back of their head, 
+  quickly toggling it on-and-off. He is gone before the corpse hits the ground.
+  
+  The togruta dashes across the battlefield, doublesaber deflecting blaster 
+  shots to the ground. She pulls her wounded padawan to her feet, and 
+  guides her away from the warzone.
+  
+  Green-bladed lightsaber a blur, the cathar ferociously presses the 
+  attack. With each strike, she guides her opponent closer to the ravine’s 
+  edge. A flurry of blows followed by a quick force push and her foe tumbles 
+  over the edge.
+
+  Sentinels are the masters of blending force powers with weapon attacks. They 
+  weave the two together so expertly that their foes have trouble predicting them.
+hitPoints:
+  hitDice: =1 * roll(8) * Character.level
+  initialHitPoints: =8 + Character.constitutionModifier
+  additionalHitPoints: =1d8 + Character.constitutionModifier
+proficiencies:
+  - reference: Proficieny/LightArmor
+  - reference: WeaponClass/SimpleLightWeapons
+  - reference: WeaponClass/SimpleVibroWeapons
+  - reference: WeaponClass/MartialLightWeaponsWithFinesse
+  - reference: WeaponClass/MartialVibroWeaponsWithFinesse
+  - pick: 1
+    resourceTypes:
+    - Tool
+savingThrows:
+  - Character.dexterityModifier
+  - Character.charismaModifier
+skills:
+  - pick: 3
+    from:
+    - reference: Skill/Acrobatics
+    - reference: Skill/Animal Handling
+    - reference: Skill/Insight
+    - reference: Skill/Intimidation
+    - reference: Skill/Perception
+    - reference: Skill/Persuasion
+    - reference: Skill/Piloting
+    - reference: Skill/Stealth
+    - reference: Skill/Technology
+startingEquipment:
+  - pick: 1
+    from: 
+    
+    
